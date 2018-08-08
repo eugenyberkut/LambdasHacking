@@ -21,7 +21,7 @@ public class Exercises {
 // a static List<String> defined at the bottom of this file.
 
     @Test
-//    @Disabled
+    @Disabled
     public void printAllWords() {
         /* TODO */
         // no assertions
