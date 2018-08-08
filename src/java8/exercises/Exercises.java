@@ -1,5 +1,8 @@
 package java8.exercises;
 
+
+import org.junit.jupiter.api.*;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -9,30 +12,25 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class Exercises {
 
 // Exercise 1: Print out all the words in wordList, which is
 // a static List<String> defined at the bottom of this file.
 
-    @Test @Ignore
+    @Test
+//    @Disabled
     public void printAllWords() {
         /* TODO */
-
         // no assertions
     }
     
 // Exercise 2: Convert all words in wordList to upper case,
 // and gather the result into an output list.
     
-    @Test @Ignore
+    @Test @Disabled
     public void upperCaseWords() {
         List<String> output = null; /* TODO */
         
@@ -47,7 +45,7 @@ public class Exercises {
 // Exercise 3: Find all the words in wordList that have even length
 // and put them into an output list.
     
-    @Test @Ignore
+    @Test @Disabled
     public void findEvenLengthWords() {
         List<String> output = null; /* TODO */
         
@@ -63,7 +61,7 @@ public class Exercises {
 // The text file is "SonnetI.txt" (Shakespeare's first sonnet) which is
 // located at the root of this NetBeans project.
 
-    @Test @Ignore
+    @Test @Disabled
     public void countLinesInFile() throws IOException {
         long count = 0L; /* TODO */
         
@@ -72,7 +70,7 @@ public class Exercises {
     
 // Exercise 5: Join lines 3-4 from the text file into a single string.
     
-    @Test @Ignore
+    @Test @Disabled
     public void joinLineRange() throws IOException {
         String output = null; /* TODO */
         
@@ -84,7 +82,7 @@ public class Exercises {
 
 // Exercise 6: Find the length of the longest line in the file.
     
-    @Test @Ignore
+    @Test @Disabled
     public void lengthOfLongestLine() throws IOException {
         int longest = 0; /* TODO */
         
@@ -96,7 +94,7 @@ public class Exercises {
 // Splitting this way results in "words" that are the empty string,
 // which should be discarded. REGEXP is defined at the bottom of this file.
     
-    @Test @Ignore
+    @Test @Disabled
     public void listOfAllWords() throws IOException {
         List<String> output = null; /* TODO */
         
@@ -122,7 +120,7 @@ public class Exercises {
     
 // Exercise 8: Create a list containing the words, lowercased, in alphabetical order.
     
-    @Test @Ignore
+    @Test @Disabled
     public void sortedLowerCase() throws IOException {
         List<String> output = null; /* TODO */
         
@@ -150,7 +148,7 @@ public class Exercises {
 // Exercise 9: Sort unique, lower-cased words by length, then alphabetically
 // within length, and place the result into an output list.
 
-    @Test @Ignore
+    @Test @Disabled
     public void sortedLowerCaseDistinctByLengthThenAlphabetically() throws IOException {
         List<String> output = null; /* TODO */
         
@@ -177,7 +175,7 @@ public class Exercises {
 // list of words of that length. Don't bother with uniqueness or lower-
 // casing the words.
     
-    @Test @Ignore
+    @Test @Disabled
     public void mapLengthToWordList() throws IOException {
         Map<Integer, List<String>> map = null; /* TODO */
         
@@ -194,7 +192,7 @@ public class Exercises {
 // lower case. Extra challenge: implement two solutions, one that uses
 // groupingBy() and the other that uses toMap().
     
-    @Test @Ignore
+    @Test @Disabled
     public void wordFrequencies() throws IOException {
         Map<String, Long> map = null; /* TODO */
 
@@ -216,7 +214,7 @@ public class Exercises {
 // representation of the result would be:
 //     {f={3=[foo]}, b={3=[bar, baz], 4=[bazz]}}.
 
-    @Test @Ignore
+    @Test @Disabled
     public void nestedMaps() throws IOException {
         Map<String, Map<Integer, List<String>>> map = null; /* TODO */
 
@@ -239,13 +237,13 @@ public class Exercises {
 
     private BufferedReader reader;
 
-    @Before
+    @BeforeEach
     public void setUpBufferedReader() throws IOException {
         reader = Files.newBufferedReader(
                 Paths.get("SonnetI.txt"), StandardCharsets.UTF_8);
     }
 
-    @After
+    @AfterEach
     public void closeBufferedReader() throws IOException {
         reader.close();
     }
